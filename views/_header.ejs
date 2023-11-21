@@ -1,24 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
 
-<header>
-    <nav class="navbar navbar-dark bg-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" style="background-color: rgb(236, 236, 40) ;color: black;font-weight: bold;" href="/">Placement Cell</a>
-        <% if(locals.user) { %>
-        <a class="navbar-brand" href="/profile"
-          >Hi, <%= locals.user.username%></a
-        >
-        <%}%>
-  
-        <form class="d-flex">
-          <a class="navbar-brand" href="/dashboard">Dashboard</a>
-          <a class="navbar-brand" href="/student/add-student">Add new Student</a>
-          <a class="navbar-brand" href="/interview/add-interview"
-            >Add Interview</a
-          >
-          <a class="navbar-brand" href="/download">Report</a>
-          <a class="navbar-brand" href="/sign-out">Signout</a>
-        </form>
-      </div>
-    </nav>
-  </header>
-  
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        header {
+            background-color: #343a40;
+            padding: 15px 0;
+        }
+        
+        .navbar-brand {
+            color: #ffc107;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+            background-color: #343a40;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .navbar-brand:hover {
+            background-color: #555;
+            color: #ffc107;
+        }
+        
+        .navbar-brand.active {
+            background-color: #555;
+            color: #ffc107;
+        }
+        
+        .navbar-nav {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        
+        .navbar-link {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        
+        .navbar-link:hover {
+            color: #ffc107;
+        }
+        
+        .container-fluid {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .user-greeting {
+            color: #ffffff;
+            font-weight: bold;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">Placement Cell</a>
+                <% if(locals.user) { %>
+                    <span class="user-greeting">Hi, <%= locals.user.username %></span>
+                    <% } %>
+
+                        <div class="navbar-nav">
+                            <a class="navbar-link" href="/dashboard">Dashboard</a>
+                            <a class="navbar-link" href="/student/add-student">Add new Student</a>
+                            <a class="navbar-link" href="/interview/add-interview">Add Interview</a>
+                            <a class="navbar-link" href="/download">Report</a>
+                            <a class="navbar-link" href="/sign-out">Signout</a>
+                        </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Your content goes here -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</body>
+
+</html>

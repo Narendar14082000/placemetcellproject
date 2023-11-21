@@ -75,32 +75,6 @@ module.exports.create = async(req, res) => {
 };
 
 // Deletion of student
-// module.exports.destroy = async(req, res) => {
-//     try {
-//         const { studentId } = req.params;
-//         const student = await Student.findById(studentId);
-
-//         if (!student) {
-//             return;
-//         }
-
-//         const interviewsOfStudent = student.interviews;
-
-//         // delete reference of student from companies in which this student is enrolled
-//         if (interviewsOfStudent.length > 0) {
-//             for (let interview of interviewsOfStudent) {
-//                 await Interview.findOneAndUpdate({ company: interview.company }, { $pull: { students: { student: studentId } } });
-//             }
-//         }
-
-//         student.remove();
-//         return res.redirect("back");
-//     } catch (err) {
-//         console.log("error", err);
-//         return;
-//     }
-// };
-// Deletion of student
 module.exports.destroy = async(req, res) => {
     try {
         const { studentId } = req.params;

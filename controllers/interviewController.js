@@ -12,27 +12,6 @@ module.exports.addInterview = (req, res) => {
     return res.redirect("/");
 };
 
-// // creating a new interview
-// module.exports.create = async(req, res) => {
-//     try {
-//         const { company, date } = req.body;
-
-//         await Interview.create({
-//                 company,
-//                 date,
-//             },
-//             (err, Interview) => {
-//                 if (err) {
-//                     return res.redirect("back");
-//                 }
-//                 return res.redirect("back");
-//             }
-//         );
-//     } catch (err) {
-//         console.log(err);
-//     }
-// };
-
 // creating a new interview
 module.exports.create = async(req, res) => {
     try {
